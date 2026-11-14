@@ -81,6 +81,12 @@ public class UsuariService {
         usuariRepository.save(usuari);
     }
 
+    public void reactivar(Integer id) {
+        Usuari usuari = findById(id);
+        usuari.setActiu(true);
+        usuariRepository.save(usuari);
+    }
+
     public void delete(Integer id) {
         Usuari usuari = findById(id);
         usuariRepository.delete(usuari);
