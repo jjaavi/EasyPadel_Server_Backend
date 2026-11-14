@@ -88,6 +88,13 @@ public class UsuariController {
         return ResponseEntity.noContent().build();
     }
 
+    //PUT /api/usuaris/{usuariId}/reactivar
+    @PutMapping("/{usuariId}/reactivar")
+    public ResponseEntity<Void> reactivarUsuari(@PathVariable Integer usuariId) {
+        usuariService.reactivar(usuariId);
+        return ResponseEntity.noContent().build();
+    }
+
     //POST /api/usuaris/login
     @PostMapping("/login")
     public ResponseEntity<LoginResponse> login(@Valid @RequestBody LoginRequest request) {
